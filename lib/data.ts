@@ -80,7 +80,7 @@ export const projects: Project[] = [
     title: 'Chinchintirapié – Escuela Carnavalera',
     slogan: 'Proyecto Integrador - Front-End Developer',
     description: 'Participé en el desarrollo de una plataforma web autogestionable orientada a la difusión cultural, repositorio multimedia y gestión de usuarios mediante una arquitectura de tres capas cliente-servidor. Diseñé y desarrollé la arquitectura frontend priorizando la interfaz, UX y el consumo de APIs REST.',
-    image: '/public/projects/chinchintirapie.png',
+    image: '/public/projects/Chinchintirapiè.png',
     technologies: ['React', 'Vite', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap 5'],
     demoUrl: 'https://chinchintirapie-backend-frontend-psi.vercel.app/',
     codeUrl: 'https://github.com/2197natashacruz-droid/chinchintirapie-backend-frontend',
@@ -271,6 +271,6 @@ export const profile = {
   yearsExperience: 1,
   projectsCompleted: 10,
   technologiesMastered: 12,
-  profileImage: '/profile.jpg',
+  profileImage: '/projects/Fotodeperfil.png',
   bannerImage: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Gemini_Generated_Image_7z7ndb7z7ndb7z7n-LXEbRzIpr5MMXUgOCeNeZC83GXBX5S.png'
 }
