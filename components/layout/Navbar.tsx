@@ -65,7 +65,8 @@ export default function Navbar() {
               e.preventDefault()
               handleClick('#home')
             }}
-            className="text-xl font-bold gradient-text"
+            className="text-xl font-bold"
+            style={{ color: '#fff', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
             whileHover={{ scale: 1.05 }}
           >
             {'<VP />'}
@@ -83,9 +84,10 @@ export default function Navbar() {
                 }}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   activeSection === link.href.replace('#', '')
-                    ? 'text-primary bg-primary/10'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-card'
+                    ? 'bg-primary/20'
+                    : 'hover:bg-card/50'
                 }`}
+                style={{ color: '#fff', textShadow: '0 1px 4px rgba(0,0,0,0.7)' }}
                 whileHover={{ y: -2 }}
               >
                 {link.name}

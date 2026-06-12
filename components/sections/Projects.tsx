@@ -143,13 +143,14 @@ export default function Projects() {
 
 function FeaturedProjectCard({ project }: { project: Project }) {
   return (
-    <div className="grid md:grid-cols-2 gap-6 p-6 rounded-2xl glass">
+    <div className="group grid md:grid-cols-2 gap-8 p-6 lg:p-8 rounded-[2rem] glass border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10">
       <div className={`relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br ${project.gradient}`}>
         <img
           src={project.image}
           alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover object-top"
+          className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60" />
       </div>
       <div className="flex flex-col justify-center">
         <div className="flex items-center gap-3 mb-3">
@@ -164,14 +165,14 @@ function FeaturedProjectCard({ project }: { project: Project }) {
             {project.category}
           </span>
         </div>
-        <h4 className="text-2xl font-bold mb-3">{project.title}</h4>
+        <h4 className="text-3xl font-bold mb-3 tracking-tight group-hover:text-primary transition-colors">{project.title}</h4>
         {project.slogan && (
           <p className="text-primary font-medium mb-2 text-sm">{project.slogan}</p>
         )}
         <p className="text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-2 mb-8">
           {project.technologies.map((tech) => (
-            <span key={tech} className="px-3 py-1 text-xs rounded-full glass">
+            <span key={tech} className="px-3 py-1 text-[11px] uppercase tracking-wider font-semibold rounded-full border border-primary/20 bg-primary/10 text-primary">
               {tech}
             </span>
           ))}
@@ -209,7 +210,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ delay: index * 0.1 }}
-      className="group rounded-2xl glass overflow-hidden hover:glow-primary transition-all"
+      className="group flex flex-col rounded-[1.5rem] bg-card/40 backdrop-blur-md border border-white/5 hover:border-white/20 overflow-hidden hover:glow-primary transition-all duration-500 shadow-lg hover:shadow-xl"
     >
       {/* Image / Gradient */}
       <div className={`relative aspect-video overflow-hidden bg-gradient-to-br ${project.gradient}`}>
@@ -219,7 +220,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           className="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
         />
         {/* Overlay on hover */}
-        <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+        <div className="absolute inset-0 bg-background/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">
           <motion.a
             href={project.demoUrl}
             target="_blank"
@@ -244,9 +245,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       </div>
 
       {/* Content */}
-      <div className="p-5">
-        <div className="flex items-center justify-between mb-2">
-          <h4 className="font-bold text-lg group-hover:text-primary transition-colors">
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex items-center justify-between mb-3">
+          <h4 className="font-bold text-xl tracking-tight group-hover:text-secondary transition-colors">
             {project.title}
           </h4>
           <span className={`text-xs font-medium px-2 py-1 rounded-full ${
@@ -260,14 +261,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
           {project.description}
         </p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-auto pt-2">
           {project.technologies.slice(0, 3).map((tech) => (
-            <span key={tech} className="px-2 py-1 text-xs rounded-full glass">
+            <span key={tech} className="px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold rounded-full border border-secondary/20 bg-secondary/10 text-secondary">
               {tech}
             </span>
           ))}
           {project.technologies.length > 3 && (
-            <span className="px-2 py-1 text-xs rounded-full glass">
+            <span className="px-2.5 py-1 text-[10px] uppercase tracking-wider font-semibold rounded-full border border-muted bg-muted/20 text-muted-foreground">
               +{project.technologies.length - 3}
             </span>
           )}
