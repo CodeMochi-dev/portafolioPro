@@ -89,7 +89,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4"
             >
-              Convierto ideas complejas en interfaces dinamicas de alto rendimiento.
+              Convierto ideas complejas en interfaces dinámicas y arquitecturas escalables de alto rendimiento.
             </motion.p>
 
             {/* Location & Status */}
@@ -121,13 +121,13 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-wrap items-center justify-center gap-3 mb-10"
             >
-              {['Vue.js', 'JavaScript', 'HTML5', 'CSS3', 'Firebase', 'Git'].map((tech, index) => (
+              {['React 18', 'Vue 3', 'TypeScript', 'Java 17', 'Spring Boot', 'SQL'].map((tech, index) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
-                  className="px-3 py-1 text-sm rounded-full glass hover:bg-primary/20 transition-colors cursor-default"
+                  className="px-4 py-2 text-xs md:text-sm uppercase tracking-widest font-bold rounded-full border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-colors cursor-default shadow-sm"
                 >
                   {tech}
                 </motion.span>
